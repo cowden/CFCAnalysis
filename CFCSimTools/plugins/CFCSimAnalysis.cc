@@ -82,6 +82,10 @@ class CFCSimAnalysis : public edm::EDAnalyzer {
   std::vector<double> m_cfc_t;
   std::vector<double> m_cfc_depth;
   std::vector<double> m_cfc_id;
+
+  // some branches for tracker
+  // how much energy is lost in the tracker active material
+  
   
 };
 
@@ -146,6 +150,16 @@ CFCSimAnalysis::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
     
   }
 
+
+  // ------------------------------------------- 
+  // Tracker hits and stuff 
+  edm::Handle<edm::PSimHitContainer> pixB  
+  edm::Handle<edm::PSimHitContainer> pixE  
+  edm::Handle<edm::PSimHitContainer> trkB  
+  edm::Handle<edm::PSimHitContainer> trkE  
+
+
+  // fill the tree
   m_tree->Fill();
 
 }
